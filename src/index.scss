@@ -21,3 +21,15 @@ $complementary-color: linear-gradient(
 body {
   margin: 0;
 }
+
+.logoFont {
+  font-family: $logo-font;
+}
+
+.titleFont {
+  font-family: $title-font;
+}
+
+.textFont {
+  font-family: $text-font;
+}
