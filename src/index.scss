@@ -20,6 +20,8 @@ $complementary-color: linear-gradient(
 
 body {
   margin: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 .logoFont {
@@ -32,4 +34,9 @@ body {
 
 .textFont {
   font-family: $text-font;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
 }

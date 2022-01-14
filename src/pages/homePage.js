@@ -1,5 +1,6 @@
 import React from 'react'
 import style from '../assets/stylesheets/homepage.module.scss'
+import { GiSwordInStone } from 'react-icons/gi'
 
 const HomePage = () => (
   <section className={style.homepage}>
@@ -10,14 +11,17 @@ const HomePage = () => (
     </nav>
     <section className={style.splashSection}>
       <div className={style.logoDiv}>
-        <h1 className={`${style.logo} logoFont`}>Perspicientia</h1>
+        
+        <h1 className={`${style.logo} logoFont`}><GiSwordInStone className={style.icon}/>Perspicientia</h1>
       </div>
       <div className={style.textDiv}>
         <div className={style.rgb}/>
-        <p className={`${style.mainText} titleFont`}>Improve your</p>
-        <p className={`${style.changeText} titleFont`} titleFont>Chances.</p>
-        <p className={`${style.changeText} titleFont`}>Game.</p>
-        <p className={`${style.changeText} titleFont`}>Perception.</p>
+        <div className={style.textInner}>
+          <p className={`${style.mainText} titleFont`}>Improve your</p>
+          <p className={`${style.changeText} titleFont`}>Chances.</p>
+          {/* <p className={`${style.changeText} titleFont`}>Game.</p>
+          <p className={`${style.changeText} titleFont`}>Perception.</p> */}
+        </div>
       </div>
     </section>
   </section>
