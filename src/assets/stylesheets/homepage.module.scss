@@ -192,6 +192,11 @@
             height: 1.5rem;
             width: 1.5rem;
             margin: 0 1rem;
+            transition: 0.3s;
+          }
+
+          .socialIcons:hover {
+            transform: scale(1.2);
           }
         }   
       }
