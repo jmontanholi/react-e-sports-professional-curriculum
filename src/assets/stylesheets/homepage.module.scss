@@ -59,12 +59,11 @@
   width: 90%;
   text-shadow: 3px 3px 5px #910000, -3px -3px 5px blue;
 }
-// TEXT AND BOX SHADOWS ARE OPTIONAL, DESIGNER CHOICE
+
 .icon {
   color: white;
   height: 10rem;
   margin-right: 2rem;
-  // box-shadow: 3px 3px 30px #910000, -3px -3px 30px blue;
 }
 
 .rgb {
@@ -159,5 +158,43 @@
 }
 
 .footer {
+  display: flex;  
   margin-left: 10rem;
+  height: 15vh;
+  border-top: 1px solid grey; 
+  box-shadow: -2px -2px 15px grey;
+
+  .footerDiv {
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    width: 50%;  
+    
+    div {
+      display: inherit;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+            
+      p {
+        font-size: 1.2rem;
+      }
+       
+      .socialDiv {
+        display: inherit;
+        flex-direction: row;
+
+        a {
+          color: black;
+    
+          .socialIcons {
+            height: 1.5rem;
+            width: 1.5rem;
+            margin: 0 1rem;
+          }
+        }   
+      }
+
+    }
+  }
 }
