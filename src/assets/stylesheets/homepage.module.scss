@@ -1,13 +1,14 @@
 .homepage {
   width: 100vw;
   overflow: hidden;
+  max-width: 100;
 }
 
 .navbar {
   position: fixed;
   background-color: rgb(36, 36, 36);
   height: 100vh;
-  width: 8rem;
+  width: 10rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,6 +21,16 @@
   font-size: 1.5rem;
   color: white;
   text-decoration: none;
+  transition: 0.5s all;
+  text-align: center;
+  width: 80%;
+}
+
+.link:hover {
+  color: black;
+  background-color: white;
+  padding: 0.8rem;
+  border-radius: 10px;
 }
 
 .splashSection {
@@ -27,20 +38,33 @@
   background-color: black;
   height: 100vh;
   width: 100vw;
+  max-width: 100%;
   overflow: hidden;
   z-index: -2;
-  margin: 0;
+  margin: 0 0 0 10rem;
   padding: 0;
+  box-shadow: 5px 5px 15px black;
 }
 
 .logoDiv{
   position: relative;
+  margin-right: 5rem;
 }
 
+.logo {
+  position: absolute;
+  font-size: calc(7rem + 1.5vw);
+  color: white;
+  text-align: right;
+  width: 90%;
+  text-shadow: 3px 3px 5px #910000, -3px -3px 5px blue;
+}
+// TEXT AND BOX SHADOWS ARE OPTIONAL, DESIGNER CHOICE
 .icon {
   color: white;
   height: 10rem;
   margin-right: 2rem;
+  // box-shadow: 3px 3px 30px #910000, -3px -3px 30px blue;
 }
 
 .rgb {
@@ -82,19 +106,54 @@
   background-image: linear-gradient(45deg, #250000, rgb(82, 0, 0), #250000);
   height: 45%;
   clip-path: polygon(57% 8%, 80% 52%, 100% 9%, 100% 100%, 84% 100%, 50% 100%, 18% 100%, 0 100%, 0 0, 42% 25%);
-  z-index: 2;  
+  z-index: 2;
 }
 
 .textInner {
   margin: calc(12% - 0.8vw) 0 0 20%;
   font-size: 3rem;
-  width: 90%;
 }
 
-.logo {
-  position: absolute;
-  font-size: calc(7rem + 1.5vw);
-  color: white;
-  text-align: right;
-  width: 90%;  
+.informationsDiv {
+  margin: 5rem 0 5rem 10rem;
+}
+
+.aboutUs,
+.mission,
+.gamerInfo {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 3rem;
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 5rem;
+  }
+  div {
+    width: 45%;
+    margin-bottom: 5rem;
+  }
+  p {
+    margin: 0;
+    font-size: 1.3rem;
+    text-align: justify;
+    line-height: 2.2rem;
+    font-weight: 500;
+  }
+}
+
+.mission {
+  h2 {
+    text-align: right;
+  }
+}
+
+.informationImg {
+  height: 20vw;
+  border-radius: 25px;
+}
+
+.secondImg {
+  height: 32vw;
 }
