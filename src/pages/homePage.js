@@ -76,8 +76,15 @@ const HomePage = () => (
         </div>
         <img className={style.informationImg} src={gamerImg} alt="computer with controllers and user avatar images" />
       </section>
-      
     </section>
+    <footer className={`${style.footer}`}>
+      <div>
+          Guilherme
+      </div>
+      <div>
+          João
+      </div>
+    </footer>
   </section>
 )
 
