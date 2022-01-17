@@ -187,7 +187,7 @@
 
         a {
           color: black;
-    
+
           .socialIcons {
             height: 1.5rem;
             width: 1.5rem;
@@ -196,9 +196,17 @@
           }
 
           .socialIcons:hover {
-            transform: scale(1.2);
+            transform: scale(1.3);
           }
-        }   
+        }
+
+        .linkedin {
+          color: #0e76a8;
+        }
+
+        .email {
+          color: rgb(180, 0, 0);
+        }
       }
 
     }

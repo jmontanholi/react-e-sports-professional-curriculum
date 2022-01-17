@@ -84,8 +84,8 @@ const HomePage = () => (
             <p>Guilherme Giachellin</p>
             <div className={style.socialDiv}>
               <a href='https://github.com/GuilhermeGiachellin'><AiFillGithub className={style.socialIcons}/></a>
-              <a href='https://www.linkedin.com/in/guilherme-giachellin-2599771b9/'><AiFillLinkedin className={style.socialIcons}/></a>
-              <a href='mailto:guilherme.giache@gmail.com'><AiOutlineMail className={style.socialIcons}/></a>
+              <a className={style.linkedin} href='https://www.linkedin.com/in/guilherme-giachellin-2599771b9/'><AiFillLinkedin className={`${style.socialIcons}`}/></a>
+              <a className={style.email} href='mailto:guilherme.giache@gmail.com'><AiOutlineMail className={`${style.socialIcons}`}/></a>
             </div>
           </div>
       </div>
@@ -94,8 +94,8 @@ const HomePage = () => (
             <p>João Montanholi</p>
             <div className={style.socialDiv}>
               <a href='https://github.com/jmontanholi'><AiFillGithub className={style.socialIcons} /></a>
-              <a href='https://www.linkedin.com/in/joaovitormontanholi/'><AiFillLinkedin className={style.socialIcons} /></a>
-              <a href='mailto:jonunes9326@hotmail.com.br'><AiOutlineMail className={style.socialIcons} /></a>
+              <a className={style.linkedin} href='https://www.linkedin.com/in/joaovitormontanholi/'><AiFillLinkedin className={`${style.socialIcons}`} /></a>
+              <a className={style.email} href='mailto:jonunes9326@hotmail.com.br'><AiOutlineMail className={`${style.socialIcons}`} /></a>
             </div>
           </div>
       </div>
