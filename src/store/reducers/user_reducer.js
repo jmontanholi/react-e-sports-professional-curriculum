@@ -1,5 +1,6 @@
 import { GET_ALL_USERS, GET_ALL_USERS_SUCCESS, GET_ALL_USERS_FAILURE } from '../api_slices/get_user_api';
 import { USER_LOGIN, USER_LOGIN_SUCCESS, USER_LOGIN_FAILURE } from '../api_slices/login_api';
+import { USER_SIGN_UP, USER_SIGN_UP_SUCCESS, USER_SIGN_UP_FAILURE } from '../api_slices/signup_api';
 
 const initialState = {
   loading: false,
@@ -27,6 +28,12 @@ function usersReducer(state = initialState, action) {
     case USER_LOGIN_SUCCESS:
       return { ...state, loading: false, user_information: action.payload };
     case USER_LOGIN_FAILURE:
+      return { ...state, loading: false, errors: [...state.errors, ...action.payload.error] };
+    case USER_SIGN_UP:
+      return { ...state, loading: true };
+    case USER_SIGN_UP_SUCCESS:
+      return { ...state, loading: false, user_information: action.payload };
+    case USER_SIGN_UP_FAILURE:
       return { ...state, loading: false, errors: [...state.errors, ...action.payload.error] };
     default:
       return state;
