@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from "react-router-dom";
 import style from '../assets/stylesheets/homepage.module.scss'
 import { GiSwordInStone } from 'react-icons/gi'
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from 'react-icons/ai'
@@ -10,9 +11,8 @@ const HomePage = () => (
   <section className={style.homepage}>
     <nav className={style.navbar}>
       <a className={`${style.link} titleFont`} href="a">Home</a>
-      <a className={`${style.link} titleFont`} href="a">Login</a>
-      <a className={`${style.link} titleFont`} href="a">SignUp</a>
-      <a className={`${style.link} titleFont`} href="a">About Us</a>
+      <NavLink className={`${style.link} titleFont`} to="/login">Login</NavLink>
+      <NavLink className={`${style.link} titleFont`} to="/login">SignUp</NavLink>
     </nav> 
     <section className={style.splashSection}>
       <div className={style.logoDiv}>
