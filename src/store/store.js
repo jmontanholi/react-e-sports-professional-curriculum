@@ -7,7 +7,7 @@ import companyReducer from './reducers/company_reducer';
 
 const rootReducer = combineReducers({
   gamer: usersReducer,
-  company: companyReducer,
+  company: companyReducer
 });
 
 export default function configureStore() {

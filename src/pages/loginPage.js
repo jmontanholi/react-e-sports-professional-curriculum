@@ -13,7 +13,7 @@ const LoginPage = () => {
     setPassword(e.target.value)
   }
   return (
-    <div>
+    <section>
       <form>
         <div>
           <label htmlFor="email">Email</label>
@@ -32,7 +32,7 @@ const LoginPage = () => {
 
       </form>
       <button onClick={() => {dispatchUserLogin(dispatch, email, password)}}>Log In</button>
-    </div>
+    </section>
   )
 }
 

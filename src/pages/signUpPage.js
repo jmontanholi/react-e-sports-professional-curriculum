@@ -25,7 +25,7 @@ const SignUpPage = () => {
     setAge(e.target.value)
   }
   return (
-    <div>
+    <section>
       <form>
         <div>
           <label htmlFor="email">Email</label>
@@ -64,7 +64,7 @@ const SignUpPage = () => {
         </div>
       </form>
       <button onClick={() => {dispatchUserSignUp(dispatch, email, password, location, name, parseInt(age))}}>Sign Up</button>
-    </div>
+    </section>
   )
 }
 
