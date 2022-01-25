@@ -11,17 +11,17 @@ const UserProfile = () => {
     dispatchGetAllUsers(dispatch);
   }, [dispatch])
   const users = useSelector((state) => state.gamer.all_users)
-  console.log(users[id-1])
+  const user = users[id-1] ? users[id-1].user : null
   return (
     <section>
-      {users[id - 1] && (
+      {user && (
         <div>
           <div>
             <img src="#" alt="profile" />
           </div>
           <div>
-            <p>{users[id - 1].name}</p>
-            <p>{users[id - 1].description}</p>
+            <p>{user.name}</p>
+            <p>{user.description}</p>
             <select name="gamesMenu" id="gamesMenu">
               <option value="OW">Overwatch</option>
               <option value="LOL">League Of Legends</option>
@@ -32,7 +32,16 @@ const UserProfile = () => {
           </div>
           <div>
             {
-              users[id - 1].photos
+              user.photos.map((e) => (
+                <img src={e.link} alt={e.photo_type} />
+              ))
+            }
+          </div>
+          <div>
+            {
+              user.videos.map((e) => (
+                <img src={e.link} alt={e.video_type} />
+              ))
             }
           </div>
         </div>
