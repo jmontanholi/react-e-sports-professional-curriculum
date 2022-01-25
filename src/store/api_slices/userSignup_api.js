@@ -5,11 +5,6 @@ export const USER_SIGN_UP_SUCCESS = 'GAMES_RENTAL/SLICES/USER_SIGN_UP_SUCCESS';
 export const USER_SIGN_UP_FAILURE = 'GAMES_RENTAL/SLICES/USER_SIGN_UP_FAILURE';
 
 const userSignUp = async (email, password, location, name, age) => {
-  console.log(email)
-  console.log(password)
-  console.log(age)
-  console.log(name)
-  console.log(location)
   try {
     const response = await axios.post('https://gamerportfolioapi.herokuapp.com/api/users/sign_up', {
       email: email,

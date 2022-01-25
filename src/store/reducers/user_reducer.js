@@ -1,6 +1,6 @@
 import { GET_ALL_USERS, GET_ALL_USERS_SUCCESS, GET_ALL_USERS_FAILURE } from '../api_slices/get_user_api';
-import { USER_LOGIN, USER_LOGIN_SUCCESS, USER_LOGIN_FAILURE } from '../api_slices/login_api';
-import { USER_SIGN_UP, USER_SIGN_UP_SUCCESS, USER_SIGN_UP_FAILURE } from '../api_slices/signup_api';
+import { USER_LOGIN, USER_LOGIN_SUCCESS, USER_LOGIN_FAILURE } from '../api_slices/userLogin_api';
+import { USER_SIGN_UP, USER_SIGN_UP_SUCCESS, USER_SIGN_UP_FAILURE } from '../api_slices/userSignup_api';
 
 const initialState = {
   loading: false,

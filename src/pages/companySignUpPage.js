@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import dispatchUserSignUp from '../store/api_slices/signup_api';
+import dispatchCompanySignUp from '../store/api_slices/companySignUp_api';
 
-const SignUpPage = () => {
+const CompanySignUpPage = () => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
-  const [age, setAge] = useState(0)
   const [location, setLocation] = useState('')
   const changeEmail = (e) => {
     setEmail(e.target.value)
@@ -21,11 +20,9 @@ const SignUpPage = () => {
   const changeLocation = (e) => {
     setLocation(e.target.value)
   }
-  const changeAge = (e) => {
-    setAge(e.target.value)
-  }
   return (
     <section>
+      <h2>Company Sign Up</h2>
       <form>
         <div>
           <label htmlFor="email">Email</label>
@@ -39,13 +36,6 @@ const SignUpPage = () => {
           <input 
             type="password" 
             onChange={(e) => { changePassword(e); }}
-          />
-        </div>
-        <div>
-          <label htmlFor="age">Age</label>
-          <input 
-            type="number" 
-            onChange={(e) => { changeAge(e); }}
           />
         </div>
         <div>
@@ -63,9 +53,9 @@ const SignUpPage = () => {
           />
         </div>
       </form>
-      <button onClick={() => {dispatchUserSignUp(dispatch, email, password, location, name, parseInt(age))}}>Sign Up</button>
+      <button onClick={() => {dispatchCompanySignUp(dispatch, email, password, location, name)}}>Sign Up</button>
     </section>
   )
 }
 
-export default SignUpPage;
+export default CompanySignUpPage;
