@@ -64,10 +64,17 @@ const UserLoginPage = () => {
           />
         </div>
         <button
-        className={`${style.submit}`} 
-        onClick={() => {dispatchRightMethod()}} 
+          className={`${style.submit} titleFont`} 
+          onClick={() => {dispatchRightMethod()}} 
         >
           Log In
+        </button>
+        <button
+          className={`${style.submit}`} 
+        >
+          <NavLink className={` titleFont`} to="/sign_up">
+            Sign Up
+          </NavLink>
         </button>
       </form>
     </section>

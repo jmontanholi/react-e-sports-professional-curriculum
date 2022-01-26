@@ -12,7 +12,7 @@ const HomePage = () => (
     <nav className={style.navbar}>
       <a className={`${style.link} titleFont`} href="a">Home</a>
       <NavLink className={`${style.link} titleFont`} to="/login">Login</NavLink>
-      <NavLink className={`${style.link} titleFont`} to="/login">SignUp</NavLink>
+      <NavLink className={`${style.link} titleFont`} to="/sign_up">SignUp</NavLink>
     </nav> 
     <section className={style.splashSection}>
       <div className={style.logoDiv}>
