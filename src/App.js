@@ -4,9 +4,8 @@ import HomePage from './pages/homePage';
 import configureStore from './store/store';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import UserLoginPage from './pages/loginPage';
-import UserSignUpPage from './pages/userSignUpPage';
-import CompanySignUpPage from './pages/companySignUpPage';
+import LoginPage from './pages/loginPage';
+import SignUpPage from './pages/signUpPage';
 import UserProfile from './pages/userProfile';
 
 const store = configureStore();
@@ -23,8 +22,8 @@ function App() {
       <Provider store={store}>
         <div className="App">
           <Routes>
-            <Route path="/login" element={<UserLoginPage />} />
-            <Route path="/sign_up" element={<UserSignUpPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/sign_up" element={<SignUpPage />} />
             <Route path="/user/:id" element={<UserProfile />} />
             <Route path="/" element={<HomePage />} />
             <Route path="*" element={<Navigate to="/" />} />

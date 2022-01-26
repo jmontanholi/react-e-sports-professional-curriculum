@@ -1,12 +1,19 @@
 .section {
   display: flex;
-  justify-content: end;
   height: 100vh;
   width: 100vw;
   background: 
     linear-gradient(rgba(0, 0, 0, 0.555), 
   rgba(0, 0, 0, 0.5)),
     no-repeat top url('../images/loginBackground.jpg');
+}
+
+.end {
+  justify-content: end;
+}
+
+.start {
+  justify-content: start;
 }
 
 .form {
@@ -18,8 +25,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: 1s;
   .title {
-    margin: 5rem;
+    margin: 2rem;
     font-size: 2rem;
   }
 
@@ -94,4 +102,22 @@
       color: black;
     }
   }
+}
+
+@keyframes popOutIn {
+  0% {
+    width: 20%;
+    height: 100%;
+    opacity: 0;
+  }
+
+  100% {
+    width: 30%;
+    height: 100%;
+    opacity: 1;
+  }
+}
+
+.animation {
+ animation: popOutIn 2s;
 }

@@ -6,11 +6,11 @@ import dispatchUserLogin from '../store/api_slices/userLogin_api';
 import style from '../assets/stylesheets/login.module.scss';
 import { GiSwordInStone } from 'react-icons/gi'
 
-const UserLoginPage = () => {
+const LoginPage = () => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [select, setSelect] = useState('')
+  const [select, setSelect] = useState('user')
   const changeEmail = (e) => {
     setEmail(e.target.value)
   }
@@ -19,6 +19,10 @@ const UserLoginPage = () => {
   }
   const changeSelect = (e) => {
     setSelect(e.target.value)
+    document.getElementById('form').classList.add(style.animation)
+    setTimeout(() => {
+      document.getElementById('form').classList.remove(style.animation)
+    }, 2000);
   }
   const dispatchRightMethod = () => {
     if (select === 'user') {
@@ -28,8 +32,8 @@ const UserLoginPage = () => {
     }
   }
   return (
-    <section className={`${style.section}`}>
-      <form className={`${style.form}`}>
+    <section className={`${style.section} ${select === 'user' ? style.end : style.start}`}>
+      <form id='form' className={`${style.form}`}>
         <div className={style.logoDiv}>
           <h1 className={`${style.logo} logoFont`}><GiSwordInStone className={style.icon}/><NavLink to="/">Perspicientia</NavLink></h1>
         </div>
@@ -81,4 +85,4 @@ const UserLoginPage = () => {
   )
 }
 
-export default UserLoginPage;
+export default LoginPage;
