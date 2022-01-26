@@ -63,7 +63,7 @@ const SignUpPage = () => {
           </select>
         </div>
         <div className={`${style.div}`}>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email" className={`${style.label} textFont`}>Email</label>
           <input 
             type="email"
             onChange={(e) => { changeEmail(e); }}
@@ -71,16 +71,16 @@ const SignUpPage = () => {
           />
         </div>
         <div className={`${style.div}`}>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="name" className={`${style.label} textFont`}>Username</label>
           <input 
-            type="password" 
-            onChange={(e) => { changePassword(e); }}
+            type="text" 
+            onChange={(e) => { changeName(e); }}
             className={`${style.input}`}
           />
         </div>
         {select === 'user' && (
           <div className={`${style.div}`}>
-            <label htmlFor="age">Age</label>
+            <label htmlFor="age" className={`${style.label} textFont`}>Age</label>
             <input 
               type="number" 
               onChange={(e) => { changeAge(e); }}
@@ -89,18 +89,18 @@ const SignUpPage = () => {
           </div>
         )}
         <div className={`${style.div}`}>
-          <label htmlFor="name">Username</label>
+          <label htmlFor="location" className={`${style.label} textFont`}>Location</label>
           <input 
             type="text" 
-            onChange={(e) => { changeName(e); }}
+            onChange={(e) => { changeLocation(e); }}
             className={`${style.input}`}
           />
         </div>
         <div className={`${style.div}`}>
-          <label htmlFor="location">Location</label>
+          <label htmlFor="password" className={`${style.label} textFont`}>Password</label>
           <input 
-            type="text" 
-            onChange={(e) => { changeLocation(e); }}
+            type="password" 
+            onChange={(e) => { changePassword(e); }}
             className={`${style.input}`}
           />
         </div>
