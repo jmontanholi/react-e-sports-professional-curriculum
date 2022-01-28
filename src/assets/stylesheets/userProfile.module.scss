@@ -3,8 +3,60 @@
   height: 100vh;
   width: 100vw;
   background: 
-    linear-gradient(rgba(0, 0, 0, 0.438), 
-  rgba(0, 0, 0, 0.5)),
     no-repeat top url('../images/profileBackground.jpg');
-  background-size: 100%;
+  background-size: 100% 100%;
+  background-position: cover;
+  justify-content: center;
+}
+
+.majorDiv {
+  width: calc(90% - 20vw);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 15px 15px 50px rgb(17, 17, 17);
+}
+
+.infoDiv {
+  display: flex;
+  height: 30%;
+  border-bottom: 1px solid rgb(53, 53, 53);
+  box-shadow: 2px 2px 10px rgb(77, 77, 77);
+}
+
+.profileImgDiv {
+  width: 35%;
+  .profileImg {
+    margin: 1.3rem;
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.descriptionDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  .name {
+    font-size: 2rem;
+  }
+  .description {
+    font-size: 1.3rem;
+  }
+  .select {
+    padding: 0.6rem;
+    border-radius: 8px;
+  }
+  .select:hover {
+    cursor: pointer;
+  }
+  .select:focus {
+    outline: none;
+    border: 1px solid grey;
+  }
+}
+
+.photosDiv {
+  display: grid;
+  margin: 1rem;
+  height: 30%;
 }

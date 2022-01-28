@@ -3,10 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { Provider as StyletronProvider, DebugEngine } from "styletron-react";
+import { Client as Styletron } from "styletron-engine-atomic";
+import { LightTheme, BaseProvider } from 'baseui';
+
+const debug =
+  process.env.NODE_ENV === "production" ? void 0 : new DebugEngine();
+
+const engine = new Styletron();
 
 ReactDOM.render(
   <React.StrictMode>
-      <App />
+    <StyletronProvider value={engine} debug={debug} debugAfterHydration>
+      <BaseProvider theme={LightTheme}>
+        <App />
+      </BaseProvider>
+    </StyletronProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
