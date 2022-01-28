@@ -1,0 +1,10 @@
+.section {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.438), 
+  rgba(0, 0, 0, 0.5)),
+    no-repeat top url('../images/profileBackground.jpg');
+  background-size: 100%;
+}

@@ -43,6 +43,7 @@ const SignUpPage = () => {
       dispatchCompanySignUp(dispatch, email, password, location, name)
     }
   };
+
   return (
     <section className={`${style.section} ${select === 'user' ? style.end : style.start}`}>
       <form id='form' className={`${style.form}`}>
