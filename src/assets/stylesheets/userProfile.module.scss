@@ -1,33 +1,42 @@
 .section {
   display: flex;
-  height: 100vh;
-  width: 100vw;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
   background: 
     no-repeat top url('../images/profileBackground.jpg');
   background-size: 100% 100%;
   background-position: cover;
-  justify-content: center;
+  background-attachment: fixed;
+  align-items: center;
+}
+
+.nav {
+  position: fixed;
+  height: 4rem;
+  background-color: white;
+  width: 100%;
 }
 
 .majorDiv {
-  width: calc(90% - 20vw);
+  margin-top: 4rem;
+  width: 60%;
   background-color: rgb(255, 255, 255);
   box-shadow: 15px 15px 50px rgb(17, 17, 17);
 }
 
 .infoDiv {
   display: flex;
-  height: 30%;
+  height: 17rem;
   border-bottom: 1px solid rgb(53, 53, 53);
   box-shadow: 2px 2px 10px rgb(77, 77, 77);
 }
 
 .profileImgDiv {
-  width: 35%;
+  width: 30%;
   .profileImg {
     margin: 1.3rem;
-    width: 200px;
-    height: 200px;
+    width: 90%;
   }
 }
 
@@ -36,6 +45,7 @@
   flex-direction: column;
   align-items: center;
   width: 60%;
+  margin-left: 1rem;
   .name {
     font-size: 2rem;
   }
@@ -57,6 +67,56 @@
 
 .photosDiv {
   display: grid;
+  grid-template-columns: repeat(3, 33%);
+  grid-template-rows: auto;
   margin: 1rem;
   height: 30%;
+  .photo {
+    width: 90%;
+    margin: 10px;
+  }
+}
+
+.videosDiv {
+  margin: 5vw 0;
+  display: flex;
+  justify-items: space-between;
+  align-items: center;
+  .videoFrame {
+    margin: auto;
+    width: 53.3rem;
+    height: 30rem;
+    border: 5px solid rgb(113, 5, 175);
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    .noVideoMessage {
+      font-size: 3rem;
+      color: rgb(113, 5, 175);
+    }
+  }
+  .video {
+    width: 53.3rem;
+    height: 30rem;
+    border: 5px solid rgb(113, 5, 175);
+    border-radius: 15px;
+  }
+  .leftArrow,
+  .rightArrow {
+    color: rgb(113, 5, 175);
+    background-color: transparent;
+    border: 1px solid rgb(113, 5, 175);
+    border-radius: 50%;
+    font-size: 3rem;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    transition: 0.3s;
+  }
+  .leftArrow:hover,
+  .rightArrow:hover {
+    cursor: pointer;
+    background-color: rgb(113, 5, 175);
+    color: white;
+  }
 }
