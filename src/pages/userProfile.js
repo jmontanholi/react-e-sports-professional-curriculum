@@ -1,7 +1,10 @@
 import * as React from 'react' 
 import { useEffect, useState } from 'react';
+import { NavLink } from "react-router-dom";
+import { GiSwordInStone } from 'react-icons/gi'
 import { Select } from "baseui/select";
 import dispatchGetAllUsers from '../store/api_slices/get_user_api';
+import { FaArrowLeft, FaArrowRight} from 'react-icons/fa'
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -23,13 +26,22 @@ const UserProfile = () => {
   if (user) {
     profilePic = user.photos.filter((e) => e.photo_type === 'profile')
   }
+  const handleVideoChange = (operation) => {
+    if (operation === 'less') {
+      videoNum - 1 < 0 ? setVideoNum(videos.length - 1) : setVideoNum(videoNum - 1);
+    } else {
+      videoNum + 1 > videos.length - 1 ? setVideoNum(0) : setVideoNum(videoNum + 1)
+    }
+  }
   return (
     <section className={`${style.section}`}>
       <nav className={`${style.nav}`}>
-        <a href="www">something</a>
-        <a href="www">something</a>
-        <a href="www">something</a>
-        <a href="www">something</a>
+        <div className={style.logoDiv}>
+          <h1 className={`${style.logo} logoFont`}><GiSwordInStone className={style.icon}/>Perspicientia</h1>
+        </div>
+        <NavLink className={`${style.link} titleFont`} to="/">Home Page</NavLink>
+        <NavLink className={`${style.link} titleFont`} to="/login">Login</NavLink>
+        <NavLink className={`${style.link} titleFont`} to="/sign_up">SignUp</NavLink>
       </nav>
       {user && (
         <div className={`${style.majorDiv}`}>
@@ -98,25 +110,30 @@ const UserProfile = () => {
             />
           </div>
           <div className={`${style.videosDiv}`}>
-            <button className={`${style.leftArrow}`} type='button'>{'<'}</button>
+            <button onClick={() => {handleVideoChange('less')}} className={`${style.leftArrow}`} type='button'><FaArrowLeft /></button>
             {
-              user.videos.filter((e) => e.video_type === select[0].id).length === 0 && (
+              videos.filter((e) => e.video_type === select[0].id).length === 0 && (
                 <div className={`${style.videoFrame}`}>
                   <p className={`${style.noVideoMessage}`}>This player has no video upload for this category</p>
                 </div>
               )
             }
-            <iframe
-              key={`${videos[videoNum].id}`}
-              className={`${style.video}`}
-              src='https://res.cloudinary.com/hrwa243my/video/upload/v1638366301/samples/sea-turtle.mp4' 
-              title={`video number ${videos[videoNum].id} type: ${videos[videoNum].video_type}`} 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowFullScreen
-            >
-            </iframe>
-            <button className={`${style.rightArrow}`} type='button'>{'>'}</button>
+            {
+              videos.filter((e) => e.video_type !== select[0].id).length === 0 && (
+                <iframe
+                  key={`${videos[videoNum].id}`}
+                  className={`${style.video}`}
+                  src='https://res.cloudinary.com/hrwa243my/video/upload/v1638366301/samples/sea-turtle.mp4' 
+                  title={`video number ${videos[videoNum].id} type: ${videos[videoNum].video_type}`} 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen
+                >
+                </iframe>
+              )
+            }
+            
+            <button onClick={() => {handleVideoChange('plus')}} className={`${style.rightArrow}`} type='button'><FaArrowRight /></button>
           </div>
         </div>
       )}

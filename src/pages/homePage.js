@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 import { NavLink } from "react-router-dom";
-import style from '../assets/stylesheets/homepage.module.scss'
-import { GiSwordInStone } from 'react-icons/gi'
-import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from 'react-icons/ai'
-import aboutUsImg from '../assets/images/aboutUs.jpg'
-import missionImg from '../assets/images/mission.jpg'
-import gamerImg from '../assets/images/whyBecomeGamer.jpg'
+import style from '../assets/stylesheets/homepage.module.scss';
+import { GiSwordInStone } from 'react-icons/gi';
+import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from 'react-icons/ai';
+import aboutUsImg from '../assets/images/aboutUs.jpg';
+import missionImg from '../assets/images/mission.jpg';
+import gamerImg from '../assets/images/whyBecomeGamer.jpg';
 
 const HomePage = () => (
   <section className={style.homepage}>
