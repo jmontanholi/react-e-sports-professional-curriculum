@@ -14,24 +14,63 @@
   align-items: center;
   justify-content: center;
   border-right: 1px solid rgb(82, 82, 82);
+
+  .link {
+    margin: 4rem;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    transition: 0.5s all;
+    text-align: center;
+    width: 80%;
+    background-color: transparent;
+    border: none;
+  }
+  
+  .link:hover {
+    color: black;
+    background-color: white;
+    padding: 0.8rem;
+    border-radius: 10px;
+  }
+
+  .homeBtn:hover {
+    cursor: pointer;
+  }
+
+  .smallLinksDiv {
+    flex-direction: column;
+    align-items: center;
+    a {
+      font-size: 0.8rem;
+      margin: 0.5rem;
+    }
+    transition: 1s;
+    animation: 1s appear;
+  }
+
+  .displayNone {
+    display: none;
+  }
+
+  .displayFlex {
+    display: flex;
+  }
+
+  @keyframes appear {
+    from {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
-.link {
-  margin: 4rem;
-  font-size: 1.5rem;
-  color: white;
-  text-decoration: none;
-  transition: 0.5s all;
-  text-align: center;
-  width: 80%;
-}
 
-.link:hover {
-  color: black;
-  background-color: white;
-  padding: 0.8rem;
-  border-radius: 10px;
-}
 
 .splashSection {
   position: relative;

@@ -33,15 +33,45 @@ const HomePage = () => {
     observer.observe(mission);
   })
   
+  const showSubNav = () => {
+    const smallDiv = document.querySelector(`.${style.smallLinksDiv}`)
+    const homeBtn = document.querySelector(`.${style.homeBtn}`)
+    if (smallDiv.classList.contains(style.displayFlex)) {
+      smallDiv.classList.remove(style.displayFlex)
+      smallDiv.classList.add(style.displayNone)
+      homeBtn.classList.remove(style.fallBack)
+    } else {
+      smallDiv.classList.remove(style.displayNone)
+      smallDiv.classList.add(style.displayFlex)
+      homeBtn.classList.add(style.fallBack)
+    }
+    
+
+  }
 
   return (
     <section className={style.homepage}>
       <nav className={style.navbar}>
-        <a className={`${style.link} titleFont`} href="a">Home</a>
+        <button
+          type='button' 
+          className={`${style.link} 
+          ${style.homeBtn} titleFont`}
+          onClick={() => {
+            showSubNav()
+          }}
+        >
+          Home Menu
+        </button>
+        <div className={`${style.smallLinksDiv} ${style.displayNone}`}>
+          <a className={`${style.link} titleFont`} href="#logo">Start</a>
+          <a className={`${style.link} titleFont`} href="#aboutUs">About Us</a>
+          <a className={`${style.link} titleFont`} href="#mission">Our Mission</a>
+          <a className={`${style.link} titleFont`} href="#gamerInfo">Why Become a Gamer</a>
+        </div>
         <NavLink className={`${style.link} titleFont`} to="/login">Login</NavLink>
         <NavLink className={`${style.link} titleFont`} to="/sign_up">SignUp</NavLink>
       </nav> 
-      <section className={style.splashSection}>
+      <section id='logo' className={style.splashSection}>
         <div className={style.logoDiv}>
           <h1 className={`${style.logo} logoFont`}><GiSwordInStone className={style.icon}/>Perspicientia</h1>
         </div>
@@ -56,7 +86,7 @@ const HomePage = () => {
         </div>
       </section>
       <section className={style.informationsDiv}>
-        <section className={style.aboutUs}>
+        <section id='aboutUs' className={style.aboutUs}>
           <div>
             <h2 className={`titleFont`}>About Us</h2>
             <p className={`textFont`}>
@@ -72,7 +102,7 @@ const HomePage = () => {
           </div>
           <img className={style.informationImg} src={aboutUsImg} alt="computer with controllers and user avatar images" />
         </section>
-        <section className={style.mission}>
+        <section id='mission' className={style.mission}>
           <img className={`${style.informationImg} ${style.secondImg}`} src={missionImg} alt="computer with controllers and user avatar images" />
           <div>
             <h2 className={`titleFont`}>Our Mission</h2>
@@ -88,7 +118,7 @@ const HomePage = () => {
             </p>
           </div>
         </section>
-        <section className={style.gamerInfo}>
+        <section id='gamerInfo' className={style.gamerInfo}>
           <div>
             <h2 className={`titleFont`}>Why become a gamer</h2>
             <p className={`textFont`}>
