@@ -5,6 +5,7 @@ import dispatchUserSignUp from '../store/api_slices/userSignup_api';
 import dispatchCompanySignUp from '../store/api_slices/companySignUp_api';
 import style from '../assets/stylesheets/login.module.scss';
 import { GiSwordInStone } from 'react-icons/gi'
+import { BsArrowLeftCircleFill } from 'react-icons/bs'
 
 const SignUpPage = () => {
   const dispatch = useDispatch();
@@ -48,6 +49,7 @@ const SignUpPage = () => {
     <section className={`${style.section} ${select === 'user' ? style.end : style.start}`}>
       <form id='form' className={`${style.form}`}>
         <div className={style.logoDiv}>
+          <NavLink className={`${style.backBtn}`} to="/"><BsArrowLeftCircleFill /></NavLink>
           <h1 className={`${style.logo} logoFont`}><GiSwordInStone className={style.icon}/><NavLink to="/">Perspicientia</NavLink></h1>
         </div>
         <h2 className={`${style.title} titleFont`}>Sign Up</h2>

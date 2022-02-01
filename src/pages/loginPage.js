@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { BsArrowLeftCircleFill } from 'react-icons/bs'
 import { NavLink } from 'react-router-dom';
 import dispatchCompanyLogin from '../store/api_slices/companyLogin_api';
 import dispatchUserLogin from '../store/api_slices/userLogin_api';
@@ -35,6 +36,7 @@ const LoginPage = () => {
     <section className={`${style.section} ${select === 'user' ? style.end : style.start}`}>
       <form id='form' className={`${style.form}`}>
         <div className={style.logoDiv}>
+          <NavLink className={`${style.backBtn}`} to="/"><BsArrowLeftCircleFill /></NavLink>
           <h1 className={`${style.logo} logoFont`}><GiSwordInStone className={style.icon}/><NavLink to="/">Perspicientia</NavLink></h1>
         </div>
         <h2 className={`${style.title} titleFont`}>Login</h2>
