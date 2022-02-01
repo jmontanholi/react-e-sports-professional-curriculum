@@ -43,6 +43,9 @@ const UserProfile = () => {
         <NavLink className={`${style.link} titleFont`} to="/login">Login</NavLink>
         <NavLink className={`${style.link} titleFont`} to="/sign_up">SignUp</NavLink>
       </nav>
+      { !user && (
+        <h1>Loading . . .</h1>
+      )}
       {user && (
         <div className={`${style.majorDiv}`}>
           <div className={`${style.infoDiv}`}>
